@@ -1,0 +1,132 @@
+.density-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.density-tile {
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  text-align: left;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  overflow: hidden;
+  background: var(--surface);
+}
+.density-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--line-strong);
+}
+.density-tile--active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow), var(--shadow-md);
+}
+.density-tile-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  opacity: 0.8;
+}
+.density-tile-content {
+  padding: 16px;
+}
+.density-tile-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.density-tile-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.density-tile-kota {
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-bottom: 4px;
+}
+.density-tile-value {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.density-tile-density {
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+.density-tile-bar {
+  height: 3px;
+  background: var(--surface-3);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.density-tile-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  opacity: 0.6;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.density-tile-check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+}
+
+.density-legend {
+  display: flex;
+  gap: 20px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.density-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  font-weight: 500;
+}
+.density-legend-swatch {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+@media (max-width: 1280px) {
+  .density-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1024px) {
+  .density-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .density-grid {
+    grid-template-columns: 1fr;
+  }
+}
